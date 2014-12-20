@@ -6,10 +6,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		int sumofPrimes = 5;
-		ArrayList<Integer> primes = new ArrayList<Integer>(1000);
+		final int numofPrimes = 1000;
+		ArrayList<Integer> primes = new ArrayList<Integer>(numofPrimes);
 		primes.add(2);
 		primes.add(3);
-		for (int i = 4; primes.size() < 1000; i++) {
+		for (int i = 5; primes.size() < numofPrimes; i += 2) {
 			boolean prime = true;
 			for (Integer e : primes) {
 				if ((i / e) * e == i) {
