@@ -17,16 +17,16 @@ public class Main {
 				int[] pattern = new int[10];
 				if (nums.length > 89 || nums.length == 0)
 					pass = false;
-				for (int i = 0; i < nums.length; i++) {
-					int current = Character.getNumericValue(nums[i]);
-					count[current]++;
-					if (i < 10) {
-						if (!pass)
+				else {
+					for (int i = 0; i < nums.length; i++) {
+						int current = Character.getNumericValue(nums[i]);
+						count[current]++;
+						if (i < 10) {
+							pattern[i] = current;
+						} else if (count[current] > pattern[current]) {
+							pass = false;
 							break;
-						pattern[i] = current;
-					} else if (count[current] > pattern[current]) {
-						pass = false;
-						break;
+						}
 					}
 				}
 				if (pass) {
